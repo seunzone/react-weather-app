@@ -25650,7 +25650,7 @@
 	      if (isLoading) {
 	        return React.createElement(
 	          'h3',
-	          null,
+	          { className: 'text-center' },
 	          'Fetching weather...'
 	        );
 	      } else if (temp && location) {
@@ -25662,9 +25662,9 @@
 	      'div',
 	      null,
 	      React.createElement(
-	        'h3',
-	        null,
-	        'Weather Component'
+	        'h1',
+	        { className: 'text-center' },
+	        'Get Weather'
 	      ),
 	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
 	      renderMessage()
@@ -25683,36 +25683,34 @@
 	var React = __webpack_require__(8);
 
 	var WeatherForm = React.createClass({
-	    displayName: 'WeatherForm',
+	  displayName: 'WeatherForm',
 
+	  onFormSubmit: function onFormSubmit(e) {
+	    e.preventDefault();
 
-	    onFormSubmit: function onFormSubmit(e) {
-	        e.preventDefault();
+	    var location = this.refs.location.value;
 
-	        var location = this.refs.location.value;
-
-	        if (location.length > 0) {
-	            this.refs.location.value = '';
-	            this.props.onSearch(location);
-	        }
-	    },
-
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            null,
-	            React.createElement(
-	                'form',
-	                { onSubmit: this.onFormSubmit },
-	                React.createElement('input', { type: 'text', ref: 'location' }),
-	                React.createElement(
-	                    'button',
-	                    null,
-	                    'Check Weather'
-	                )
-	            )
-	        );
+	    if (location.length > 0) {
+	      this.refs.location.value = '';
+	      this.props.onSearch(location);
 	    }
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'form',
+	        { onSubmit: this.onFormSubmit },
+	        React.createElement('input', { type: 'text', ref: 'location' }),
+	        React.createElement(
+	          'button',
+	          { className: 'button expanded hollow' },
+	          'Get Weather'
+	        )
+	      )
+	    );
+	  }
 	});
 
 	module.exports = WeatherForm;
@@ -25721,32 +25719,24 @@
 /* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(8);
 
-	var WeatherMessage = React.createClass({
-	  displayName: 'WeatherMessage',
+	var WeatherMessage = function WeatherMessage(_ref) {
+	  var temp = _ref.temp,
+	      location = _ref.location;
 
-	  render: function render() {
-	    var _props = this.props,
-	        temp = _props.temp,
-	        location = _props.location;
-
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(
-	        'h2',
-	        null,
-	        'It\'s ',
-	        temp,
-	        ' degree celsius in ',
-	        location
-	      )
-	    );
-	  }
-	});
+	  return React.createElement(
+	    "h3",
+	    { className: "text-center" },
+	    "It's it ",
+	    temp,
+	    " in ",
+	    location,
+	    "."
+	  );
+	};
 
 	module.exports = WeatherMessage;
 
@@ -27378,6 +27368,25 @@
 	          { href: "https://github.com/seunzone/react-weather-app" },
 	          "Link"
 	        )
+	      ),
+	      " ",
+	      React.createElement("br", null),
+	      React.createElement(
+	        "li",
+	        null,
+	        "I'm a Freelance Developer, Visit my ",
+	        React.createElement(
+	          "a",
+	          { href: "http://seunzone.com/about" },
+	          "About Page"
+	        ),
+	        " or my ",
+	        React.createElement(
+	          "a",
+	          { href: "http://seunzone.com" },
+	          "Tech Blog"
+	        ),
+	        " for more coding articles and Tech Stuffs."
 	      )
 	    )
 	  );

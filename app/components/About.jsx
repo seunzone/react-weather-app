@@ -30,6 +30,9 @@ var About = (props) =>{
           <li>
             You Can Get the Source Code on GitHub, I've published the source code on GitHu,<br/>
             Simply Follow the <a href='https://github.com/seunzone/react-weather-app'>Link</a>
+          </li> <br/>
+          <li>
+            I'm a Freelance Developer, Visit my <a href="http://seunzone.com/about">About Page</a> or my <a href="http://seunzone.com">Tech Blog</a> for more coding articles and Tech Stuffs.
           </li>
         </ul>
       </div>
