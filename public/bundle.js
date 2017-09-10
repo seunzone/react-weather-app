@@ -25499,11 +25499,14 @@
 	      null,
 	      React.createElement(Nav, null),
 	      React.createElement(
-	        'h2',
-	        null,
-	        'Main Component'
-	      ),
-	      this.props.children
+	        'div',
+	        { className: 'row' },
+	        React.createElement(
+	          'div',
+	          { className: 'columns medium-6 large-4 small-centered' },
+	          this.props.children
+	        )
+	      )
 	    );
 	  }
 	});
@@ -27307,7 +27310,7 @@
 /* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(8);
 
@@ -27320,11 +27323,64 @@
 	// });
 
 	var About = function About(props) {
-	      return React.createElement(
-	            'h3',
-	            null,
-	            'About Component'
-	      );
+	  return React.createElement(
+	    "div",
+	    null,
+	    React.createElement(
+	      "h1",
+	      { className: "text-center" },
+	      "About"
+	    ),
+	    React.createElement("hr", null),
+	    React.createElement(
+	      "p",
+	      null,
+	      "This is a weather application build on ReactJS."
+	    ),
+	    React.createElement(
+	      "p",
+	      null,
+	      "Here are some of the tools I used:"
+	    ),
+	    React.createElement(
+	      "ul",
+	      null,
+	      React.createElement(
+	        "li",
+	        null,
+	        React.createElement(
+	          "a",
+	          { href: "https://facebook.github.io/react" },
+	          "React"
+	        ),
+	        " - This was the JavaScript framework used."
+	      ),
+	      React.createElement("br", null),
+	      React.createElement(
+	        "li",
+	        null,
+	        React.createElement(
+	          "a",
+	          { href: "http://openweathermap.org" },
+	          "Open Weather Map"
+	        ),
+	        " - I used Open Weather Map to search for weather data by city name."
+	      ),
+	      React.createElement("br", null),
+	      React.createElement(
+	        "li",
+	        null,
+	        "You Can Get the Source Code on GitHub, I've published the source code on GitHu,",
+	        React.createElement("br", null),
+	        "Simply Follow the ",
+	        React.createElement(
+	          "a",
+	          { href: "https://github.com/seunzone/react-weather-app" },
+	          "Link"
+	        )
+	      )
+	    )
+	  );
 	};
 
 	module.exports = About;
@@ -27337,6 +27393,8 @@
 
 	var React = __webpack_require__(8);
 
+	var _require = __webpack_require__(166),
+	    Link = _require.Link;
 	// var Examples = React.createClass({
 	//   render: function () {
 	//     return (
@@ -27347,9 +27405,41 @@
 
 	var Examples = function Examples(props) {
 	  return React.createElement(
-	    'h3',
+	    'div',
 	    null,
-	    'Examples Component'
+	    React.createElement(
+	      'h1',
+	      { className: 'text-center' },
+	      'Examples'
+	    ),
+	    React.createElement('hr', null),
+	    React.createElement(
+	      'p',
+	      null,
+	      'Here are a few Example to try out'
+	    ),
+	    React.createElement(
+	      'ol',
+	      null,
+	      React.createElement(
+	        'li',
+	        null,
+	        React.createElement(
+	          Link,
+	          { to: '/?location=Abuja' },
+	          'Abuja'
+	        )
+	      ),
+	      React.createElement(
+	        'li',
+	        null,
+	        React.createElement(
+	          Link,
+	          { to: '/?location=Abuja' },
+	          'Abuja'
+	        )
+	      )
+	    )
 	  );
 	};
 
